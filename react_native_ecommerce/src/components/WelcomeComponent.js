@@ -1,13 +1,13 @@
 import {View, Text,StyleSheet, TouchableOpacity, TextInput} from 'react-native';
-
+import {theme} from "../constants/theme";
 function  WelcomeView() {
     return (
         <View> 
             <View>
-                <Text style={styles.welcomeText('black', 70)}>Find The Most </Text>
+                <Text style={styles.welcomeText(theme.colors.black, 70)}>Find The Most </Text>
 
 
-                 <Text style={styles.welcomeText('green', 0)}>Luxurious Furniture </Text>
+                 <Text style={styles.welcomeText(theme.colors.green, 0)}>Luxurious Furniture </Text>
             </View>
             <View style={styles.searchContainer}>
 
@@ -20,7 +20,7 @@ function  WelcomeView() {
                 <TouchableOpacity onPress={() => {
                    console.log("Clicked");
                 }}>
-                    <Text style={styles.searchBorder} >
+                    <Text style={styles.searchButton} >
                         Search
                     </Text>
                 </TouchableOpacity>
@@ -32,30 +32,38 @@ function  WelcomeView() {
 const styles = StyleSheet.create({
     searchWrapper:{
         flex: 1,
-        backgroundColor: "yellow"
+        backgroundColor: theme.colors.yellow,
+        borderRadius: theme.sizes.small,
+        marginRight: theme.sizes.small,
     },
     welcomeText:(color, top) => ( //reuseable object
         {
-            fontSize: 30,
+            fontSize: theme.sizes.large,
             color: color,
             marginTop: top,
-            marginHorizontal: 50
+            marginHorizontal: theme.sizes.small
         }
     ),
-    searchBorder:{
+    searchButton:{
         borderWidth: 2,
-        borderRadius: 5,
-        borderColor: "black",
-        padding: 5
+        borderRadius: theme.sizes.small,
+        borderColor: theme.colors.black,
+        padding: 5,
+        justifyContent: "center",
+        backgroundColor: theme.colors.white
     },
     searchContainer:{
         flexDirection:"row",
         justifyContent: "center",
-        marginHorizontal: 80
+        marginHorizontal: theme.sizes.small,
+        backgroundColor: theme.colors.yellow,
+        marginVertical: theme.sizes.medium,
+        borderRadius: theme.sizes.medium
     },
     searchInput:{
         width:"100%",
-        // height: "100%",    
+        // height: "100%",  
+        paddingHorizontal: theme.sizes.small 
     }
 
 });
