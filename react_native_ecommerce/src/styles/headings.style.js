@@ -3,7 +3,8 @@ import { StyleSheet} from "react-native";
 
 const styles = StyleSheet.create({
     headerTitle:{
-        fontSize: theme.sizes.xLarge
+        fontSize: theme.sizes.xLarge,
+        // fontWeight: theme.fontWeight.bold,
     },
     header:{
         flexDirection: "row",
@@ -13,7 +14,7 @@ const styles = StyleSheet.create({
         width: theme.sizes.size100,
         height: theme.sizes.xLarge +15,
         fontSize: theme.sizes.xLarge,
-        fontWeight: "bold",
+        fontWeight: theme.fontWeight.bold,
         borderWidth: 2,
         borderColor: theme.colors.red,
         borderRadius: theme.sizes.medium,

@@ -6,6 +6,8 @@ export const theme = {
         grey: "grey",
         yellow: "yellow",
         green: "green",
+        softblue: "#AACEDB",
+        lavender: "#E6E6FA"
     },
     sizes:{
         xSmall: 10,
@@ -16,5 +18,8 @@ export const theme = {
         xxLarge: 35,
         size100: 100,
     },
+    fontWeight:{
+        bold: "bold",
+    }
 
 }
