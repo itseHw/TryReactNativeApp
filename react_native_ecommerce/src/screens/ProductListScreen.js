@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView } from 'react-native';
 import ProductCardComponent from '../components/ProductCardComponent';
 import loadingStyles from '../styles/loading.style';
+import { Ionicons } from '@expo/vector-icons';
 
 const localProductList = [
   {
@@ -28,32 +29,28 @@ const localProductList = [
     title: "Table",
     price: "$70",
     path: require("../../assets/images/table01.png"),
-},
+  },
 ];
 
 export default function ProductList() {
   const [ loading, setLoading ] = useState(true); // true can change to number or other words, related to loading in this case
 
   useEffect(() =>{
-    console.log("use effect is being called");
     const timer = setTimeout( () =>
     {
-      console.log("changing the state variable value");
       setLoading(false);
-      console.log("The value of loading is point 2", loading);
     }, 3000 );//3000 means 3 second
     return () => clearTimeout(timer);
-  });
+  }, []);
 
   if(loading){
     return <View style = { loadingStyles.loadingView }>
       <Text style = { loadingStyles.showLoading } >Loading......</Text>
+      <Ionicons name = "reload-circle" size = { 64 }/>
     </View>
   }
 
   const renderItem = ({ item }) => {
-    console.log("The value of loading is point 1", loading);
-
     return (
       <ProductCardComponent item = { item }/>
     );
