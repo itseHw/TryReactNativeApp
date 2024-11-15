@@ -4,4 +4,4 @@ This is a project for me to try and learn React Native, I am  watching video on 
 
 node version: v20.11.1
 
-The youtube link is "https://www.youtube.com/watch?v=ASuTeRbKcf0"
+The youtube link is "https://www.youtube.com/watch?v=ASuTeRbKcf0" and "https://www.youtube.com/watch?v=HTFQRoVGEls"

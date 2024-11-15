@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.lavender
   },
   image:{
-    width: "100%",
+    width: "70%",
     height: "70%",
   },
   details:{
