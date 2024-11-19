@@ -80,6 +80,41 @@ const styles = StyleSheet.create({
     },
     freeDelivery:{
         marginLeft: 10
+    },
+    carrtRow:{
+        marginHorizontal: theme.sizes.large,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginTop: theme.sizes.xSmall
+    },
+    cartTitle:{
+        fontWeight: "bold",
+        color: theme.colors.lightWhite,
+        fontSize: theme.sizes.medium
+    },
+    addCart:{
+        width: 37,
+        height: 37,
+        backgroundColor: theme.colors.black,
+        borderRadius: 50,
+        justifyContent: "center",
+        alignItems: "center"
+
+    },
+    buyButton:{
+        backgroundColor: theme.colors.black,
+        justifyContent: "center",
+        alignItems: "center",
+        width: theme.sizes.width*0.7,
+        borderRadius: theme.sizes.large
+    },
+    favButton:{
+        backgroundColor: theme.colors.black,
+        width: 36,
+        height: 36,
+        borderRadius: 99,
+        justifyContent: "center",
+        alignItems: "center"
     }
 
 })

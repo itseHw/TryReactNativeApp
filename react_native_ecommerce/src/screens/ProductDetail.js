@@ -1,17 +1,24 @@
 import { View, Text, Image, Touchable, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useRoute } from '@react-navigation/native';
 import styles from "../styles/product.style";
 import { RatingInput } from "react-native-stock-star-rating";
 import { theme } from "../constants/theme";
-import { Ionicons, MaterialCommunityIcons, SimpleLineIcons } from '@expo/vector-icons';
-import { increment, decrement } from '../utils/product_helpers';
+import { AntDesign, Fontisto, Ionicons, MaterialCommunityIcons, SimpleLineIcons } from '@expo/vector-icons';
+import { increment, decrement, handlePress } from '../utils/product_helpers';
+import { LoginContext } from '../contexts/UserLoginContext';
+import { FavContext } from '../contexts/RefetchFavContext';
+
 
 
 // export default function ProductDetail({ navigation }) {
-export default function ProductDetail() {
+export default function ProductDetail({navigation}) {
   const [rating, setRating] = useState(0);
   const [count, setCount] = useState(1);
+
+  const {userLogin, setUserLogin} = useContext(LoginContext);
+  const {refechFav, setRefechFav} = useContext(FavContext);
+
   const route = useRoute();
   // console.log("my route object ", route);
   const item = route.params.item;
@@ -88,8 +95,38 @@ export default function ProductDetail() {
         </View>
 
         {/* car related information */}
-        <View>
-          
+        <View style = {styles.carrtRow}>
+          {/* fav button */}
+          <TouchableOpacity
+            onPress={ () => handlePress(userLogin, navigation, item, setRefechFav) }
+            style = { styles.favButton }
+          >
+            <AntDesign
+              name = "heart"
+              size = { 17 }
+              color={ theme.colors.grey }
+            />
+
+          </TouchableOpacity>  
+          {/* buy button */}
+          <TouchableOpacity
+            onPress={ () => console.log("buy tapped") }
+            style = { styles.buyButton }
+          >
+            <Text style = { styles.cartTitle}> Buy Now </Text>
+          </TouchableOpacity>
+
+          {/* shopping bag icon */}
+          <TouchableOpacity
+            onPress={ () => console.log("order tapped")  }
+            style = { styles.addCart }
+          >
+            <Fontisto
+              name = "shopping-bag"
+              size = { 17 }
+              color = {theme.colors.lavender}
+            />
+          </TouchableOpacity>
         </View>
       </View>
 
