@@ -1,14 +1,14 @@
 
 export const increment = (setCount, count) => {
     setCount(count+1);
-}
+};
 
 export const decrement = (setCount, count) => {
     if(count>1){ // for prevent  smaller than 1
         setCount(count-1);
     }
 
-}
+};
 
 export const handlePress = async (userLogin, navigation, item, setRefetech) => {
     if(userLogin == false){
@@ -39,7 +39,15 @@ export const handlePress = async (userLogin, navigation, item, setRefetech) => {
             console.log("Error:", e);
         }
     }
-}
+};
+
+export const handleCart = async (navigation, item, count, userLogin, setUserCart) => {
+    if(userLogin == false){
+        //navigation to login Page
+    }else{
+        console.log("user has logged in");
+    }
+};
 
 const mockApiCall = (data) => {
     return new Promise((resolve) =>{
